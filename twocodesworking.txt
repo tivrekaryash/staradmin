@@ -200,139 +200,76 @@ require_once 'db_config.php';
 
 
 
-        .card-body.roomuploader {
-  max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+        .roomuploader .card-body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-.roomuploader .warning-text {
-  margin-top: 10px;
-}
+        .roomuploader .main-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
 
-.roomuploadermodal .modal-body {
-  text-align: left;
-}
+        .roomuploader .warning-text {
+            margin-top: 10px;
+        }
 
-.roomuploadermodal .modal-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
+        .roomuploader .modal-body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.roomuploader .new-image-container {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 10px;
-}
+        .roomuploader .modal-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
 
-.roomuploader .new-gallery-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 5px;
-}
+        .roomuploader .new-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
 
-.roomuploader .new-delete-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  padding: 5px 10px;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+        .roomuploader .new-gallery-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 5px;
+        }
 
-.roomuploader h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+        .roomuploader .new-delete-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.roomuploader .subheading {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #777;
-}
+        .roomuploader h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-.roomuploader .new-image-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
+        .roomuploader .subheading {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #777;
+        }
 
-.roomuploader .new-image-container {
-  flex-basis: calc(50% - 10px);
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-
-.roomuploader .success-message {
-  background-color: #28a745;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  display: none;
-  margin-bottom: 10px;
-}
-
-.roomuploader .warning-text {
-  background-color: #fff3cd;
-  border: 1px solid #ffc107;
-  border-radius: 4px;
-  padding: 10px;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #6c757d;
-}
-
-.roomuploader .warning-text i {
-  margin-right: 5px;
-  color: #ffc107;
-}
-
-.roomuploader .warning-text span:first-child {
-  font-weight: 600;
-  margin-right: 5px;
-}
-
-.roomuploader .warning-text span:last-child {
-  flex-grow: 1;
-}
-
-.roomuploadermodal .modal-body {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.roomuploadermodal .modal-body .new-modal-image {
-  max-width: 100%;
-  max-height: 200px;
-  margin: 10px;
-}
-
-@media (max-width: 767px) {
-  .roomuploader .new-image-container {
-    flex-basis: calc(50% - 10px);
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-}
-
-@media (min-width: 768px) {
-  .roomuploader .new-image-container {
-    flex-basis: calc(25% - 10px);
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-}
-
-
+        .roomuploader .new-image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
     </style>
 </head>
 
@@ -447,11 +384,12 @@ require_once 'db_config.php';
                                     </div>
                                 </div>
 
+                                <!--
                                 <div class="card-body roomuploader">
                                     <h2>Room Images</h2>
                                     <p class="subheading">Browse and update room images</p>
-                                    <?php
-                                    $newImageFolder = 'imageuploads/rooms/'; // Replace with the actual path to your new image folder
+                                    <?php /*
+                                    $newImageFolder = 'new_image_uploads/'; // Replace with the actual path to your new image folder
                                     $newImages = glob($newImageFolder . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 
                                     if (!empty($newImages)) {
@@ -466,7 +404,7 @@ require_once 'db_config.php';
                                         echo '</div>';
                                     } else {
                                         echo 'No new images found.';
-                                    }
+                                    } */
                                     ?>
 
                                     <div class="warning-text">
@@ -477,7 +415,7 @@ require_once 'db_config.php';
                                     <button type="button" class="btn btn-primary mt-3 mb-3" data-bs-toggle="modal" data-bs-target="#newUpdateModal">Update New Photos</button>
                                 </div>
 
-                                <div class="modal fade roomuploadermodal" id="newUpdateModal" tabindex="-1" aria-labelledby="newUpdateModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="newUpdateModal" tabindex="-1" aria-labelledby="newUpdateModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -499,6 +437,7 @@ require_once 'db_config.php';
                                         </div>
                                     </div>
                                 </div>
+                                -->
 
                             </div>
                         </div>
@@ -643,9 +582,9 @@ require_once 'db_config.php';
         });
     </script>
 
-<script>
-        
-        var newImageFolder = 'imageuploads/rooms/';
+    <!-- <script>
+        /*
+        var newImageFolder = 'new_image_uploads/';
 
         $(document).ready(function() {
             // Handle click event of update new photos button
@@ -720,8 +659,8 @@ require_once 'db_config.php';
                     }
                 });
             }
-        });
-    </script>
+        }); */
+    </script> -->
 
 </body>
 

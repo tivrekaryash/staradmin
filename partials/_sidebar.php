@@ -2,41 +2,35 @@
   <ul class="nav">
 
     <li class="nav-item">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link" href="dashboard.php">
         <i class="mdi mdi-grid-large menu-icon"></i>
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
 
-    <li class="nav-item nav-category">UI Elements</li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-        <i class="menu-icon mdi mdi-floor-plan"></i>
-        <span class="menu-title">UI Elements</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="ui-basic">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-        </ul>
-      </div>
-    </li>
-
-    <li class="nav-item nav-category">Forms and Datas</li>
-    <li class="nav-item">
-      <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-        <i class="menu-icon mdi mdi-layers-outline"></i>
-        <span class="menu-title">Icons</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="icons">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
-        </ul>
-      </div>
-    </li>
+    <li class="nav-item nav-category">Satva Content</li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="contactsection.php" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <span class="menu-title">Contact Details</span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="roomsection.php" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <span class="menu-title">Room Rate & Specials</span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="imageuploader.php" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <span class="menu-title">Image Uploader</span>
+              <i class="menu-arrow"></i>
+            </a>
+          </li>
 
   </ul>
 </nav>

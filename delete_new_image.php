@@ -1,5 +1,5 @@
 <?php 
-$newImageFolder = 'new_image_uploads/'; // Replace with the actual path to your new image folder
+$newImageFolder = 'imageuploads/rooms/'; // Replace with the actual path to your new image folder
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['image'])) {
     $newImageToDelete = $_POST['image'];
