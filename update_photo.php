@@ -1,5 +1,5 @@
 <?php
-$imageFolder = 'imageuploads/'; // Replace with the actual path to your image folder
+$imageFolder = 'imageuploads/main/'; // Replace with the actual path to your image folder
 
 // Database configuration
 $servername = 'localhost';

@@ -1,5 +1,5 @@
 <?php
-$secondImageFolder = 'imageuploads/second/'; // Replace with the actual path to your second image folder
+$secondImageFolder = 'imageuploads/aboutus/'; // Replace with the actual path to your second image folder
 
 // Database configuration
 $servername = 'localhost';
