@@ -42,7 +42,7 @@ require_once 'db_config.php';
     <!-- endinject -->
     <!-- Remix Icons CDN Link -->
     <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@latest/dist/iconify.min.js"></script>
-    
+
 
     <link rel="shortcut icon" href="images/favicon.png" />
 
@@ -335,37 +335,31 @@ require_once 'db_config.php';
             }
         }
 
-/* CSS for the text and icons inside the modal-body */
-#resetConfirmationModal .modal-body {
-    text-align: center;
-}
+        /* CSS for the text and icons inside the modal-body */
+        #resetConfirmationModal .modal-body {
+            text-align: center;
+        }
 
-#resetConfirmationModal .icon-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f8d7da;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-}
+        #resetConfirmationModal .icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8d7da;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+        }
 
-#resetConfirmationModal .mdi {
-    font-size: 36px;
-    color: #721c24;
-}
+        #resetConfirmationModal .mdi {
+            font-size: 36px;
+            color: #721c24;
+        }
 
-#resetConfirmationModal .confirmation-text {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-
-
-
-
-        
+        #resetConfirmationModal .confirmation-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -385,12 +379,34 @@ require_once 'db_config.php';
                     <div class="row">
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
-                            <div class="card-body">
-                                <!-- Reset Images Button -->
-<button type="button" class="btn btn-primary mt-3" id="resetImagesBtn">Reset Images</button>
+                                <div class="card-body">
+                                    <!-- Reset Images Button -->
+                                    <button type="button" class="btn btn-primary mt-3" id="resetImagesBtn">Reset Images</button>
 
-                            </div>
-                                
+                                </div>
+
+                                <!-- Confirmation Modal -->
+                                <div class="modal fade" id="resetConfirmationModal" tabindex="-1" aria-labelledby="resetConfirmationModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="resetConfirmationModalLabel">Confirm Image Reset</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="icon-container">
+                                                    <span class="mdi mdi-alert-circle-outline"></span>
+                                                </div>
+                                                <p class="confirmation-text">Are you sure you want to reset all images to the backup versions?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-danger" id="resetConfirmationBtn">Okay, Reset</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="card-body herouploader">
                                     <h2>Main Image</h2>
                                     <p class="subheading">Browse and Update Main Image</p>
@@ -541,7 +557,7 @@ require_once 'db_config.php';
 
                                 <!-- Confirmation Modal -->
                                 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Image Deletion</h5>
@@ -558,27 +574,7 @@ require_once 'db_config.php';
                                     </div>
                                 </div>
 
-                                <!-- Confirmation Modal -->
-<div class="modal fade" id="resetConfirmationModal" tabindex="-1" aria-labelledby="resetConfirmationModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="resetConfirmationModalLabel">Confirm Image Reset</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="icon-container">
-                    <span class="mdi mdi-alert-circle-outline"></span>
-                </div>
-                <p class="confirmation-text">Are you sure you want to reset all images to the backup versions?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-danger" id="resetConfirmationBtn">Okay, Reset</button>
-            </div>
-        </div>
-    </div>
-</div>
+                                
 
 
 
@@ -864,43 +860,43 @@ require_once 'db_config.php';
 
 
             // Handle click event of the "Reset Images" button
-$('#resetImagesBtn').click(function() {
-  showResetConfirmationModal();
-});
+            $('#resetImagesBtn').click(function() {
+                showResetConfirmationModal();
+            });
 
-// Function to show the confirmation modal for reset
-function showResetConfirmationModal() {
-  $('#resetConfirmationModal').modal('show');
+            // Function to show the confirmation modal for reset
+            function showResetConfirmationModal() {
+                $('#resetConfirmationModal').modal('show');
 
-  // Attach an event handler to the reset button inside the modal
-  $('#resetConfirmationBtn').off('click').on('click', function() {
-    // User confirmed to reset images, proceed with the reset operation
-    resetImages();
-  });
-}
+                // Attach an event handler to the reset button inside the modal
+                $('#resetConfirmationBtn').off('click').on('click', function() {
+                    // User confirmed to reset images, proceed with the reset operation
+                    resetImages();
+                });
+            }
 
-// Function to reset images
-function resetImages() {
-  // Make AJAX call to the server-side script to perform the reset operation
-  $.ajax({
-    url: 'reset_images.php',
-    type: 'POST',
-    success: function(response) {
-      if (response === 'success') {
-        // Successfully reset images, show a success message or perform any additional tasks
-        alert('Images have been successfully reset.');
-      } else {
-        alert('Failed to reset images.');
-      }
-    },
-    error: function() {
-      alert('An error occurred while resetting images.');
-    }
-  });
+            // Function to reset images
+            function resetImages() {
+                // Make AJAX call to the server-side script to perform the reset operation
+                $.ajax({
+                    url: 'reset_images.php',
+                    type: 'POST',
+                    success: function(response) {
+                        if (response === 'success') {
+                            // Successfully reset images, show a success message or perform any additional tasks
+                            alert('Images have been successfully reset.');
+                        } else {
+                            alert('Failed to reset images.');
+                        }
+                    },
+                    error: function() {
+                        alert('An error occurred while resetting images.');
+                    }
+                });
 
-  // Close the confirmation modal after initiating the reset operation
-  $('#resetConfirmationModal').modal('hide');
-}
+                // Close the confirmation modal after initiating the reset operation
+                $('#resetConfirmationModal').modal('hide');
+            }
 
         });
     </script>
